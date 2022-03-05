@@ -71,27 +71,7 @@ Magento 2.4.x Docker Setup:
           		    
           		2. Install M2 via CLI(/var/www/magento24):
                        
-                       php bin/magento setup:install \
-                               --db-host=mariadb \
-                               --db-name=mage24_db \
-                               --db-user=mage24_user \
-                               --db-password=mage24_pass \
-                               --base-url=http://magento24.loc/ \
-                               --backend-frontname=admin \
-                               --admin-user=admin \
-                               --admin-password=admin123 \
-                               --admin-email=nithincninan@gmail.com \
-                               --admin-firstname=nithin \
-                               --admin-lastname=ninan \
-                               --language=en_US \
-                               --currency=USD \
-                               --timezone=America/Chicago \
-                               --use-rewrites=1 \
-                               --skip-db-validation \
-                               --search-engine=elasticsearch7 \
-                               --elasticsearch-host=elasticsearch \
-                               --elasticsearch-port=9200 \
-                           && chown -R www-data:www-data .         
+                    php bin/magento setup:install --db-host=mariadb --db-name=mage24_db --db-user=mage24_user --db-password=mage24_pass --base-url=http://magento24.localhost/ --backend-frontname=admin --admin-user=admin --admin-password=admin123 --admin-email=admin@gmail.com --admin-firstname=admin --admin-lastname=admin --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --skip-db-validation --search-engine=elasticsearch7 --elasticsearch-host=elasticsearch --elasticsearch-port=9200
                            
                  3. Cross check if ES is configured, if not update the below setting in app/etc/env.php:
                              
